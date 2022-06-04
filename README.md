@@ -1,4 +1,4 @@
-通用规范汉字表 (Table of General Standard Chinese Characters)
+通用规范汉字表
 ===
 
 ![No Dependencies](http://jaywcjlove.github.io/sb/status/no-dependencies.svg)
