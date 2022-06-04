@@ -1,0 +1,30 @@
+{
+  "name": "togscc",
+  "version": "1.0.0",
+  "description": "通用规范汉字表 (Table of General Standard Chinese Characters)",
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "watch": "jest --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaywcjlove/table-of-general-standard-chinese-characters.git"
+  },
+  "keywords": [
+    "chinese-characters",
+    "Chinese",
+    "characters",
+    "汉字",
+    "中文",
+    "通用规范汉字表"
+  ],
+  "author": "jaywcjlove",
+  "license": "MIT",
+  "files": [
+    "data"
+  ],
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
