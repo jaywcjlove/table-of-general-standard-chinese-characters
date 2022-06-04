@@ -1,7 +1,8 @@
 {
   "name": "togscc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "通用规范汉字表 (Table of General Standard Chinese Characters)",
+  "main": "dist/togscc.js",
   "scripts": {
     "start": "node scripts/start.mjs",
     "watch": "jest --watch",
@@ -14,6 +15,7 @@
   "keywords": [
     "chinese-characters",
     "Chinese",
+    "togscc",
     "characters",
     "汉字",
     "中文",
@@ -22,7 +24,8 @@
   "author": "jaywcjlove",
   "license": "MIT",
   "files": [
-    "data"
+    "data",
+    "dist"
   ],
   "devDependencies": {
     "jest": "^28.1.0"
