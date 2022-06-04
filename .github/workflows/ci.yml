@@ -1,0 +1,70 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: npm install
+      - run: npm run start
+      - run: npm run test
+
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@v1.3.6
+        with:
+          package-path: package.json
+
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@v1.5.4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
+          filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: steps.create_tag.outputs.successful
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.create_tag.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.version }}
+          body: |
+            ![No Dependencies](http://jaywcjlove.github.io/sb/status/no-dependencies.svg) [![npm package](https://img.shields.io/npm/v/togscc.svg)](https://www.npmjs.com/package/togscc)
+
+            Comparing Changes: ${{ steps.changelog.outputs.compareurl }}  
+
+            ${{ steps.changelog.outputs.changelog }}
+
+            ```bash
+            npm install togscc --save
+            ```
+
+            ```js
+            import data from 'togscc/data/characters.json';
+            // data 输出 ===>
+            [
+              "一","乙","二","十","丁","厂","七","卜","八","人","入","儿","匕","几",
+              // ....
+            ]
+            ```
+
+            ```js
+            import characters from 'togscc/dist/characters';
+            import pinyin from 'togscc/dist/pinyin';
+            import raw from 'togscc/dist/pinyin.raw';
+            import togscc from 'togscc';
+
+            console.log(togscc['正']) // => ["zhēng","zhèng"]
+            console.log("你好世界！".split('').map((han) => togscc[han] ? togscc[han] : han))
+            // => ["nǐ", ["hǎo","hào"], "shì", "jiè", "！"]
+            ```
