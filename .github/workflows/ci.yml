@@ -68,3 +68,8 @@ jobs:
             console.log("你好世界！".split('').map((han) => togscc[han] ? togscc[han] : han))
             // => ["nǐ", ["hǎo","hào"], "shì", "jiè", "！"]
             ```
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: package.json
