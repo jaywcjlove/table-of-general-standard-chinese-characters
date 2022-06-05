@@ -62,6 +62,8 @@ console.log("你好世界！".split('').map((han) => togscc[han] ? togscc[han] :
 
 更多 CDN 数据访问：https://unpkg.com/togscc/
 
+- https://rawcdn.githack.com/jaywcjlove/table-of-general-standard-chinese-characters/main/data/characters.json
+- https://cdn.statically.io/gh/jaywcjlove/table-of-general-standard-chinese-characters/main/data/characters.json
 
 ### `characters.txt`
 
