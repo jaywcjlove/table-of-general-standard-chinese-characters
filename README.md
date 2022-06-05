@@ -56,7 +56,7 @@ console.log("你好世界！".split('').map((han) => togscc[han] ? togscc[han] :
 
 ⚠️ 注意：行号（或数组顺序）对应字序，字序遵循《GB13000.1 字符集汉字字序（笔画序）规范》的规定
 
-更多 CDN 数据访问：https://unpkg.com/togscc
+更多 CDN 数据访问：https://unpkg.com/togscc/
 
 
 ### `characters.txt`
