@@ -29,6 +29,7 @@ import data from 'togscc/data/characters.json';
 ```js
 import characters from 'togscc/dist/characters';
 import pinyin from 'togscc/dist/pinyin';
+import shendiao from 'togscc/dist/shendiao';
 import raw from 'togscc/dist/pinyin.raw';
 import togscc from 'togscc';
 
