@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node scripts/start.mjs",
     "watch": "jest --watch",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
