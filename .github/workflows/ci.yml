@@ -15,13 +15,29 @@ jobs:
 
       - run: npm install
       - run: npm run start
-      - run: npm run test
+      - run: npm run test -- --coverageReporters "lcov" --coverageReporters "json-summary"
+
+      - name: Create Coverage Badges
+        uses: jaywcjlove/coverage-badges-cli@main
+        with:
+          output: coverage/lcov-report/badges.svg
 
       - name: Create Tag
         id: create_tag
         uses: jaywcjlove/create-tag-action@v1.3.6
         with:
           package-path: package.json
+
+      - name: get tag version
+        id: tag_version
+        uses: jaywcjlove/changelog-generator@v1.5.4
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: ${{steps.tag_version.outputs.tag}} ${{ github.event.head_commit.message }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./coverage/lcov-report
 
       - name: Generate Changelog
         id: changelog
