@@ -152,4 +152,16 @@ const createScript = (funName, content) => `(function (global, factory) {
   await fs.promises.writeFile(togsccType, `declare const obj: Record<string, string | string[]>;\nexport default obj;`);
   console.log(`${pathLog(togsccType)}`);
 
+  const shendiaoObj = await import('../data/shendiao.object.json', {
+    assert: { type: 'json' }
+  });
+  const shendiaoScript = path.resolve(root, 'dist/shendiao.js');
+  await fs.promises.writeFile(shendiaoScript, createScript('shendiao', JSON.stringify(shendiaoObj, null, 0)));
+  console.log(`${pathLog(shendiaoScript)}`);
+
+  const shendiaoType = path.resolve(root, 'dist/shendiao.d.ts');
+  await fs.promises.writeFile(shendiaoType, `declare const obj: Record<string, string | string[]>;\nexport default obj;`);
+  console.log(`${pathLog(shendiaoType)}`);
+
+
 })();
