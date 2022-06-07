@@ -7,7 +7,7 @@
 
 最权威的《通用规范汉字表》(**T**able **o**f **G**eneral **S**tandard **C**hinese **C**haracters)，数据来源 2013-06-01 中华人民共和国教育部发布的[《通用规范汉字表》](http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201306/t20130601_186002.html)。
 
-⚠️ 注意：拼音注音没有找到官方数据来源，数据来源[《维基词典》](https://zh.wiktionary.org/wiki/Appendix:汉语拼音索引/通用规范汉字表)汉语拼音索引。PDF 数据存放在 [@v1.0.0](https://github.com/jaywcjlove/table-of-general-standard-chinese-characters/releases/tag/v1.0.0)
+⚠️ 注意：拼音注音没有找到官方数据来源，数据来源[《维基词典》](https://zh.wiktionary.org/wiki/Appendix:通用规范汉字表)汉语拼音索引。PDF 数据存放在 [@v1.0.0](https://github.com/jaywcjlove/table-of-general-standard-chinese-characters/releases/tag/v1.0.0)
 
 ## 安装
 
@@ -200,6 +200,11 @@ a 啊
 ## 其它工具
 
 - [province-city-china](https://github.com/uiwjs/province-city-china) 最全最新中国【省、市、区县、乡镇街道】json,csv,sql 数据
+
+## 参考资料
+
+- [维基文库 - 通用规范汉字表](https://zh.m.wikisource.org/zh-hans/通用规范汉字表)
+- [维基词典 - 通用规范汉字表](https://zh.wiktionary.org/wiki/Appendix:通用规范汉字表)
 
 ## License
 
