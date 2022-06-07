@@ -164,4 +164,25 @@ const createScript = (funName, content) => `(function (global, factory) {
   console.log(`${pathLog(shendiaoType)}`);
 
 
+  /** 简体 <=> 繁体 */
+  const fantiPath = path.resolve(root, 'data/fanti.txt');
+  const fantiDataStr = (await fs.promises.readFile(fantiPath)).toString();
+  const simplified = {}
+  const traditional = {}
+  fantiDataStr.split('\n').forEach((str) => {
+    const [_, trad = ''] = /\((.*.)\)/g.exec(str)
+    simplified[str.charAt(0)] = trad.indexOf(',') > 0 ? trad.split(',') : trad;
+    trad.split(',').forEach((char) => {
+      traditional[char] = str.charAt(0);
+    });
+  });
+
+  const simplifiedConvertPath = path.resolve(root, 'data/simplified.convert.json');
+  await fs.promises.writeFile(simplifiedConvertPath, JSON.stringify(simplified, null, 2));
+  console.log(`${pathLog(simplifiedConvertPath)} 汉字: ${Object.keys(simplified).length}`);
+
+  const traditionalConvertPath = path.resolve(root, 'data/traditional.convert.json');
+  await fs.promises.writeFile(traditionalConvertPath, JSON.stringify(traditional, null, 2));
+  console.log(`${pathLog(traditionalConvertPath)} 汉字: ${Object.keys(traditional).length}`);
+
 })();

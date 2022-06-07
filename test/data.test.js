@@ -3,13 +3,14 @@ const pinyinDuo = require('../data/pinyin.duo.json');
 const pinyin = require('../data/pinyin.json');
 const pinyinRaw = require('../data/pinyin.raw.json');
 const pinyinRawEffect = require('../data/pinyin.raw.effect.json');
+const simplifiedConvert = require('../data/simplified.convert.json');
+const traditionalConvert = require('../data/traditional.convert.json');
 
 const charactersJS = require('../dist/characters');
 const pinyinDuoJS = require('../dist/pinyin.duo');
 const pinyinJS = require('../dist/pinyin');
 const pinyinRawJS = require('../dist/pinyin.raw');
 const togscc = require('../');
-
 
 test('汉字转拼音 test case', () => {
   expect(Object.keys(togscc).length).toBe(8105);
@@ -82,4 +83,18 @@ test('拼音对应汉字 test case', () => {
 test('拼音与文字在一行数组中 test case', () => {
   expect(pinyinRawEffect.length).toBe(1296);
   expect(pinyinRawEffect[1]).toEqual([ "á", "啊" ]);
+});
+
+test('简 -> 繁体 test case', () => {
+  expect(Object.keys(simplifiedConvert).length).toBe(1489);
+  expect(simplifiedConvert['办']).toEqual('辦');
+  expect(simplifiedConvert['绊']).toEqual('絆');
+  expect(simplifiedConvert['变']).toEqual([ "變", "変" ]);
+});
+
+test('繁 -> 简体 test case', () => {
+  expect(Object.keys(traditionalConvert).length).toBe(1520);
+  expect(traditionalConvert['補']).toEqual('补');
+  expect(traditionalConvert['嬋']).toEqual('婵');
+  expect(traditionalConvert['終']).toEqual('终');
 });
