@@ -42,25 +42,25 @@ console.log("你好世界！".split('').map((han) => togscc[han] ? togscc[han] :
 
 | 文件名 | 说明  | 数据说明 |
 | ---- | ---- | ---- |
-| `characters.txt` | 汉字(8105个汉字)，行号对应字序 | ⚠️ 维护数据 |
+| [`characters.txt`](#characterstxt) | 汉字(8105个汉字)，行号对应字序 | ⚠️ 维护数据 |
 | `characters.csv` | 汉字拼音，表格数据 | - |
-| `characters.json` | 汉字，JSON 格式，数组顺序对应字序 | - |
+| [`characters.json`](#charactersjson) | 汉字，JSON 格式，数组顺序对应字序 | - |
 | `characters.min.json` | `characters.min.json` 的压缩数据 | - |
-| `pinyin.raw.txt` | 拼音 | ⚠️ 维护数据 |
-| `pinyin.raw.json` | 拼音，JSON 格式，数组顺序对应字序 | - |
+| [`pinyin.raw.txt`](#pinyinrawtxt) | 拼音 | ⚠️ 维护数据 |
+| [`pinyin.raw.json`](#pinyinrawjson) | 拼音，JSON 格式，数组顺序对应字序 | - |
 | `pinyin.raw.min.json` | `pinyin.raw.json` 的压缩数据 | - |
-| `pinyin.raw.effect.json` | 拼音与文字在一行数组中 | - |
-| `pinyin.txt` | 拼音，行号对应 `characters.txt` 行号 | - |
-| `pinyin.json` | 拼音，JSON 格式，数组顺序对应 `characters.json` 数组顺序 | - |
+| [`pinyin.raw.effect.json`](#pinyinraweffectjson) | 拼音与文字在一行数组中 | - |
+| [`pinyin.txt`](#pinyintxt) | 拼音，行号对应 `characters.txt` 行号 | - |
+| [`pinyin.json`](#pinyinjson) | 拼音，JSON 格式，数组顺序对应 `characters.json` 数组顺序 | - |
 | `pinyin.min.json` | `pinyin.json` 的压缩数据 | - |
-| `pinyin.duo.json` | 多音汉字数据 | - |
+| [`pinyin.duo.json`](#pinyinduojson) | 多音汉字数据 | - |
 | `pinyin.duo.min.json` | `pinyin.duo.json` 的压缩数据 | - |
-| `shendiao.json` | 字母 + 声调数据 | - |
-| `shendiao.all.json` | 字母 + 声调 + 非字母声调数据 | - |
-| `shendiao.object.json` | 字母 + 声调声调 JSON 数据 | - |
-| `fanti.txt` | `简繁`体字数据 | ⚠️ 维护数据 |
-| `simplified.convert.json` | `简` -> `繁`体字 | - |
-| `traditional.convert.json` | `繁` -> `简`体字 | - |
+| [`shendiao.json`](#shendiaojson) | 字母 + 声调数据 | - |
+| [`shendiao.all.json`](#shendiaoobjectjson) | 字母 + 声调 + 非字母声调数据 | - |
+| [`shendiao.object.json`](#shendiaoalljson) | 字母 + 声调声调 JSON 数据 | - |
+| [`fanti.txt`](#fantitxt) | `简繁`体字数据 | ⚠️ 维护数据 |
+| [`simplified.convert.json`](#simplifiedconvertjson) | `简` -> `繁`体字 | - |
+| [`traditional.convert.json`](#traditionalconvertjson) | `繁` -> `简`体字 | - |
 
 ⚠️ 注意：行号（或数组顺序）对应字序，字序遵循《GB13000.1 字符集汉字字序（笔画序）规范》的规定
 
@@ -129,6 +129,21 @@ a 啊
   [ "a", "啊" ],
   // ....
 ]
+```
+
+### `pinyin.txt`
+
+```
+dīng
+chǎng
+qī
+bo bǔ
+bā
+rén
+rù
+ér
+bǐ
+jī jǐ
 ```
 
 ### `pinyin.json`
