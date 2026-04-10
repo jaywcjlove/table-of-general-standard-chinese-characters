@@ -153,7 +153,7 @@ const createScript = (funName, content) => `(function (global, factory) {
   console.log(`${pathLog(togsccType)}`);
 
   const shendiaoObj = await import('../data/shendiao.object.json', {
-    assert: { type: 'json' }
+    with: { type: 'json' }
   });
   const shendiaoScript = path.resolve(root, 'dist/shendiao.js');
   await fs.promises.writeFile(shendiaoScript, createScript('shendiao', JSON.stringify(shendiaoObj, null, 0)));

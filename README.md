@@ -1,6 +1,8 @@
 通用规范汉字表
 ===
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
 ![No Dependencies](http://jaywcjlove.github.io/sb/status/no-dependencies.svg)
 [![npm package](https://img.shields.io/npm/v/togscc.svg)](https://www.npmjs.com/package/togscc)
 [![Coverage Status](https://jaywcjlove.github.io/table-of-general-standard-chinese-characters/badges.svg)](https://jaywcjlove.github.io/table-of-general-standard-chinese-characters/lcov-report/)
